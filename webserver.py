@@ -25,9 +25,11 @@ HOST = "0.0.0.0" if os.getenv("PORT") else "127.0.0.1"
 
 
 def _fixed_url() -> str | None:
-    """Doimiy HTTPS manzil: WEBAPP_URL yoki Railway bergan domen."""
+    """Doimiy HTTPS manzil: WEBAPP_URL, Vercel yoki Railway bergan domen."""
     if os.getenv("WEBAPP_URL"):
         return os.getenv("WEBAPP_URL").rstrip("/")
+    if os.getenv("VERCEL_PROJECT_PRODUCTION_URL"):  # Vercel'da sahifa statik: /webapp/
+        return f"https://{os.getenv('VERCEL_PROJECT_PRODUCTION_URL')}/webapp"
     if os.getenv("RAILWAY_PUBLIC_DOMAIN"):
         return "https://" + os.getenv("RAILWAY_PUBLIC_DOMAIN")
     return None
@@ -36,7 +38,7 @@ state: dict = {"url": None}
 
 
 def public_url() -> str | None:
-    return state["url"]
+    return state["url"] or _fixed_url()
 
 
 def _local(sec: str, key: str, exts: tuple) -> str | None:
@@ -46,15 +48,18 @@ def _local(sec: str, key: str, exts: tuple) -> str | None:
     return None
 
 
-def build_data() -> dict:
+def build_data(remote_only: bool = False) -> dict:
+    """3D ko'ruvchi uchun ro'yxat. remote_only=True — Vercel uchun (mahalliy media/ yo'q)."""
     sections = []
     for s in SECTIONS.values():
         items = []
         for c in s["categories"]:
             for it in c["items"]:
                 remote = media._cache.get(f"{s['key']}/{it['key']}") or {}
-                anim = _local(s["key"], it["key"], ("gif",)) or (remote.get("anim") or {}).get("url")
-                photo = _local(s["key"], it["key"], ("jpg", "jpeg", "png", "webp")) or (remote.get("photo") or {}).get("url")
+                local_a = None if remote_only else _local(s["key"], it["key"], ("gif",))
+                local_p = None if remote_only else _local(s["key"], it["key"], ("jpg", "jpeg", "png", "webp"))
+                anim = local_a or (remote.get("anim") or {}).get("url")
+                photo = local_p or (remote.get("photo") or {}).get("url")
                 items.append({"key": it["key"], "title": it["title"], "lat": it["lat"], "en": it["en"],
                               "anim": anim, "photo": photo})
         sections.append({"key": s["key"], "title": s["title"], "items": items})

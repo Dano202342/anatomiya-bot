@@ -101,47 +101,57 @@ def item_kb(sec: str, cat: str, it: dict) -> InlineKeyboardMarkup:
 
 def _remember(key: str, file_id: str) -> None:
     file_ids[key] = file_id
-    media.DATA_DIR.mkdir(exist_ok=True)
-    FILE_IDS_JSON.write_text(json.dumps(file_ids, indent=1), encoding="utf-8")
+    try:  # Vercel'da disk faqat o'qish uchun — u yerda xotirada qoladi
+        media.DATA_DIR.mkdir(exist_ok=True)
+        FILE_IDS_JSON.write_text(json.dumps(file_ids, indent=1), encoding="utf-8")
+    except OSError:
+        pass
 
 
-async def _input_file(src, name: str):
-    """Telegram uchun fayl: avval saqlangan file_id, so'ng mahalliy fayl, so'ng yuklab olish."""
-    key = str(src)
-    if key in file_ids:
-        return key, file_ids[key]
+async def _upload_file(src, name: str):
+    """Mahalliy fayl yoki yuklab olingan baytlar — havola ishlamaganda zaxira yo'l."""
     if isinstance(src, Path):
-        return key, FSInputFile(src)
+        return FSInputFile(src)
     data = await media.download(http, src)
     if not data:
-        return key, None
+        return None
     if not os.path.splitext(name)[1]:
         name += ".gif"
-    return key, BufferedInputFile(data, filename=name.replace(" ", "_"))
+    return BufferedInputFile(data, filename=name.replace(" ", "_"))
+
+
+async def _send(msg: Message, kind: str, src, caption: str) -> None:
+    """Tezlik tartibi: saqlangan file_id → havola (Telegram o'zi oladi) → yuklab yuborish."""
+    path_or_url, name = src
+    key = str(path_or_url)
+    send = msg.answer_animation if kind == "anim" else msg.answer_photo
+    tries = []
+    if key in file_ids:
+        tries.append(file_ids[key])
+    if isinstance(path_or_url, str):
+        tries.append(path_or_url)
+    tries.append(None)  # yuklab yuborish
+    for f in tries:
+        try:
+            if f is None:
+                f = await _upload_file(path_or_url, name)
+                if f is None:
+                    return
+            sent = await send(f, caption=caption)
+            obj = (sent.animation or sent.document) if kind == "anim" else sent.photo[-1]
+            if obj:
+                _remember(key, obj.file_id)
+            return
+        except TelegramBadRequest as e:
+            log.warning("%s yuborilmadi (%s): %s", kind, key[:80], e)
 
 
 async def _send_anim(msg: Message, it: dict, src) -> None:
-    key, f = await _input_file(*src)
-    if not f:
-        return
-    try:
-        sent = await msg.answer_animation(f, caption=f"🧊 <b>{it['title']}</b> — 3D model")
-        obj = sent.animation or sent.document
-        if obj:
-            _remember(key, obj.file_id)
-    except TelegramBadRequest as e:
-        log.warning("Animatsiya yuborilmadi: %s", e)
+    await _send(msg, "anim", src, f"🧊 <b>{it['title']}</b> — 3D model")
 
 
 async def _send_photo(msg: Message, it: dict, src) -> None:
-    key, f = await _input_file(*src)
-    if not f:
-        return
-    try:
-        sent = await msg.answer_photo(f, caption=f"🖼 <b>{it['title']}</b>")
-        _remember(key, sent.photo[-1].file_id)
-    except TelegramBadRequest as e:
-        log.warning("Rasm yuborilmadi: %s", e)
+    await _send(msg, "photo", src, f"🖼 <b>{it['title']}</b>")
 
 
 async def show_item(msg: Message, user_id: int, sec: str, cat: str, it: dict) -> None:
