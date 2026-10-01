@@ -1,0 +1,13 @@
+[project]
+name = "anatomiya-bot"
+version = "1.0.0"
+description = "Odam anatomiyasini 3D modellar bilan o'rgatuvchi Telegram bot"
+requires-python = ">=3.12"
+dependencies = [
+    "aiogram>=3.13",
+    "aiohttp>=3.9",
+    "python-dotenv>=1.0",
+]
+
+[tool.vercel]
+entrypoint = "app:app"
