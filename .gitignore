@@ -8,3 +8,4 @@ data/file_ids.json
 __pycache__/
 *.pyc
 .venv/
+webhook_secret.txt
