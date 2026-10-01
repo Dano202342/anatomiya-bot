@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>3D Anatomiya</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/omggif@1.0.10/omggif.js"></script>
+<style>
+  :root {
+    --bg: var(--tg-theme-bg-color, #0f1115);
+    --fg: var(--tg-theme-text-color, #f2f3f5);
+    --muted: var(--tg-theme-hint-color, #8b919c);
+    --card: var(--tg-theme-secondary-bg-color, #1a1d24);
+    --accent: var(--tg-theme-button-color, #3a8dff);
+    --accent-fg: var(--tg-theme-button-text-color, #fff);
+  }
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html, body { margin: 0; background: var(--bg); color: var(--fg); font: 15px/1.4 -apple-system, system-ui, "Segoe UI", Roboto, sans-serif; }
+  header { padding: 14px 16px 6px; }
+  h1 { font-size: 18px; margin: 0; }
+  .sub { color: var(--muted); font-size: 13px; margin-top: 2px; }
+  #stage { position: relative; margin: 8px 16px; border-radius: 16px; background: radial-gradient(circle at 50% 40%, #2a2f3a, #000); overflow: hidden; touch-action: none; aspect-ratio: 1 / 1; max-height: 70vh; display: flex; align-items: center; justify-content: center; }
+  #stage canvas, #stage img { max-width: 100%; max-height: 100%; transform-origin: center; user-select: none; -webkit-user-drag: none; }
+  #hint { position: absolute; bottom: 10px; left: 0; right: 0; text-align: center; color: #cfd3da; font-size: 12px; pointer-events: none; text-shadow: 0 1px 3px #000; }
+  #loader { position: absolute; inset: 0; display: flex; flex-direction: column; gap: 10px; align-items: center; justify-content: center; color: #cfd3da; }
+  .bar { width: 60%; height: 4px; background: #ffffff22; border-radius: 4px; overflow: hidden; }
+  .bar i { display: block; height: 100%; width: 0; background: var(--accent); transition: width .15s; }
+  .controls { display: flex; gap: 8px; padding: 4px 16px 12px; flex-wrap: wrap; }
+  button { flex: 1; min-width: 90px; border: 0; border-radius: 12px; padding: 11px 8px; font-size: 14px; background: var(--card); color: var(--fg); }
+  button.on { background: var(--accent); color: var(--accent-fg); }
+  input[type=range] { width: calc(100% - 32px); margin: 0 16px 10px; accent-color: var(--accent); }
+  .list { padding: 0 16px 24px; }
+  .sec { margin: 16px 0 6px; font-weight: 600; color: var(--muted); font-size: 13px; text-transform: uppercase; letter-spacing: .04em; }
+  .item { display: flex; gap: 12px; align-items: center; padding: 10px 12px; background: var(--card); border-radius: 12px; margin-bottom: 6px; color: var(--fg); text-decoration: none; }
+  .item .ic { font-size: 20px; }
+  .item small { display: block; color: var(--muted); }
+  #search { width: calc(100% - 32px); margin: 6px 16px; padding: 11px 12px; border-radius: 12px; border: 0; background: var(--card); color: var(--fg); font-size: 15px; }
+  .hidden { display: none !important; }
+</style>
+</head>
+<body>
+
+<!-- Ko'ruvchi -->
+<section id="viewer" class="hidden">
+  <header><h1 id="title"></h1><div class="sub" id="lat"></div></header>
+  <div id="stage">
+    <div id="loader"><div>⏳ 3D model yuklanmoqda...</div><div class="bar"><i id="prog"></i></div></div>
+    <div id="hint">👆 Barmoq bilan chapga-o'ngga suring — aylanadi</div>
+  </div>
+  <input type="range" id="zoom" min="1" max="3" step="0.05" value="1">
+  <div class="controls">
+    <button id="bPlay" class="on">⏯ Avto-aylanish</button>
+    <button id="b3d" class="on">🧊 3D</button>
+    <button id="bImg">🖼 Rasm</button>
+  </div>
+  <div class="controls"><button id="bBack">📋 Barcha 3D modellar</button></div>
+</section>
+
+<!-- Atlas ro'yxati -->
+<section id="atlas" class="hidden">
+  <header><h1>🧊 3D Anatomiya atlasi</h1><div class="sub">Modelni tanlang — bot ichida aylantirib ko'ring</div></header>
+  <input id="search" placeholder="🔎 Qidirish: son suyagi, biceps...">
+  <div class="list" id="list"></div>
+</section>
+
+<script>
+const tg = window.Telegram && Telegram.WebApp;
+if (tg) { tg.ready(); tg.expand(); }
+
+const $ = id => document.getElementById(id);
+let DATA = null;
+
+async function data() {
+  if (!DATA) DATA = await (await fetch("data.json")).json();
+  return DATA;
+}
+
+// ─────────── Atlas ───────────
+async function showAtlas() {
+  $("viewer").classList.add("hidden"); $("atlas").classList.remove("hidden");
+  stop();
+  const d = await data();
+  const render = q => {
+    q = (q || "").toLowerCase();
+    let html = "";
+    for (const s of d.sections) {
+      const its = s.items.filter(i => i.anim && (!q || (i.title + i.lat + i.en).toLowerCase().includes(q)));
+      if (!its.length) continue;
+      html += `<div class="sec">${s.title}</div>`;
+      for (const i of its) html += `<a class="item" href="#${s.key}/${i.key}"><span class="ic">🧊</span><span>${i.title}<small>${i.lat}</small></span></a>`;
+    }
+    $("list").innerHTML = html || `<p class="sub">Topilmadi</p>`;
+  };
+  render();
+  $("search").oninput = e => render(e.target.value);
+}
+
+// ─────────── Ko'ruvchi: GIF kadrlarini ajratib, surish bilan aylantirish ───────────
+let frames = [], idx = 0, timer = null, canvas = null, ctx = null, playing = true, zoom = 1;
+
+function stop() { clearInterval(timer); timer = null; }
+
+async function fetchBytes(url) {
+  const r = await fetch(url);
+  const total = +r.headers.get("content-length") || 0;
+  const reader = r.body.getReader();
+  const chunks = []; let got = 0;
+  for (;;) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    chunks.push(value); got += value.length;
+    if (total) $("prog").style.width = (got / total * 100) + "%";
+  }
+  const out = new Uint8Array(got); let o = 0;
+  for (const c of chunks) { out.set(c, o); o += c.length; }
+  return out;
+}
+
+function decodeGif(bytes) {
+  const g = new GifReader(bytes);
+  const w = g.width, h = g.height, out = [];
+  const buf = new Uint8ClampedArray(w * h * 4);
+  for (let i = 0; i < g.numFrames(); i++) {
+    const info = g.frameInfo(i);
+    if (i > 0) {
+      const prev = g.frameInfo(i - 1);
+      if (prev.disposal === 2) {  // fon bilan tozalash
+        for (let y = prev.y; y < prev.y + prev.height; y++)
+          buf.fill(0, (y * w + prev.x) * 4, (y * w + prev.x + prev.width) * 4);
+      }
+    }
+    g.decodeAndBlitFrameRGBA(i, buf);
+    out.push({ data: new ImageData(new Uint8ClampedArray(buf), w, h), delay: Math.max(info.delay * 10, 40) });
+  }
+  return { w, h, frames: out };
+}
+
+function draw() { if (frames.length) ctx.putImageData(frames[idx].data, 0, 0); }
+
+function play() {
+  stop();
+  if (!playing || frames.length < 2) return;
+  timer = setInterval(() => { idx = (idx + 1) % frames.length; draw(); }, frames[0].delay);
+}
+
+async function showViewer(sec, key) {
+  $("atlas").classList.add("hidden"); $("viewer").classList.remove("hidden");
+  stop(); frames = []; idx = 0;
+  const d = await data();
+  const s = d.sections.find(x => x.key === sec);
+  const it = s && s.items.find(x => x.key === key);
+  if (!it) { $("title").textContent = "Topilmadi"; return; }
+  $("title").textContent = it.title; $("lat").textContent = it.lat;
+  const stage = $("stage");
+  stage.querySelectorAll("canvas,img").forEach(e => e.remove());
+  $("b3d").classList.toggle("hidden", !it.anim);
+  $("bImg").classList.toggle("hidden", !it.photo);
+  $("bPlay").classList.toggle("hidden", !it.anim);
+  $("hint").classList.toggle("hidden", !it.anim);
+  if (it.anim) return show3d(it); else return showImg(it);
+}
+
+async function show3d(it) {
+  const stage = $("stage");
+  stage.querySelectorAll("canvas,img").forEach(e => e.remove());
+  $("b3d").classList.add("on"); $("bImg").classList.remove("on");
+  $("loader").classList.remove("hidden"); $("prog").style.width = "0";
+  try {
+    const g = decodeGif(await fetchBytes(it.anim));
+    frames = g.frames;
+    canvas = document.createElement("canvas"); canvas.width = g.w; canvas.height = g.h;
+    ctx = canvas.getContext("2d");
+    stage.insertBefore(canvas, $("hint"));
+    applyZoom(); draw(); play();
+    $("hint").classList.remove("hidden");
+  } catch (e) {
+    // Kadrlarga ajratib bo'lmasa — oddiy aylanuvchi GIF
+    const img = new Image(); img.src = it.anim; stage.insertBefore(img, $("hint"));
+  }
+  $("loader").classList.add("hidden");
+}
+
+function showImg(it) {
+  stop();
+  const stage = $("stage");
+  stage.querySelectorAll("canvas,img").forEach(e => e.remove());
+  $("b3d").classList.remove("on"); $("bImg").classList.add("on");
+  $("hint").classList.add("hidden");
+  const img = new Image(); img.src = it.photo; img.style.background = "#fff";
+  img.onload = () => $("loader").classList.add("hidden");
+  $("loader").classList.remove("hidden");
+  stage.insertBefore(img, $("hint")); applyZoom();
+}
+
+function applyZoom() {
+  $("stage").querySelectorAll("canvas,img").forEach(e => e.style.transform = `scale(${zoom})`);
+}
+
+// Surish bilan aylantirish
+(() => {
+  const st = $("stage"); let x0 = null, i0 = 0;
+  st.addEventListener("pointerdown", e => { if (!frames.length) return; x0 = e.clientX; i0 = idx; stop(); st.setPointerCapture(e.pointerId); });
+  st.addEventListener("pointermove", e => {
+    if (x0 === null) return;
+    const step = st.clientWidth / frames.length;           // to'liq kenglik = 1 to'liq aylanish
+    const n = Math.round((e.clientX - x0) / step);
+    idx = ((i0 + n) % frames.length + frames.length) % frames.length; draw();
+  });
+  const up = () => { if (x0 !== null) { x0 = null; play(); } };
+  st.addEventListener("pointerup", up); st.addEventListener("pointercancel", up);
+})();
+
+$("zoom").oninput = e => { zoom = +e.target.value; applyZoom(); };
+$("bPlay").onclick = () => { playing = !playing; $("bPlay").classList.toggle("on", playing); playing ? play() : stop(); };
+$("bBack").onclick = () => { location.hash = ""; };
+$("b3d").onclick = async () => { const [s, k] = location.hash.slice(1).split("/"); const d = await data(); show3d(d.sections.find(x => x.key === s).items.find(x => x.key === k)); };
+$("bImg").onclick = async () => { const [s, k] = location.hash.slice(1).split("/"); const d = await data(); showImg(d.sections.find(x => x.key === s).items.find(x => x.key === k)); };
+
+function route() {
+  const [s, k] = location.hash.slice(1).split("/");
+  if (s && k) showViewer(s, k); else showAtlas();
+}
+window.addEventListener("hashchange", route);
+// Bot tugmasi ?v=bo'lim/mavzu bilan ochadi — uni hash'ga o'tkazamiz, "orqaga" atlasga qaytaradi
+const v0 = new URLSearchParams(location.search).get("v");
+if (v0 && !location.hash) history.replaceState(null, "", location.pathname + "#" + v0);
+route();
+</script>
+</body>
+</html>

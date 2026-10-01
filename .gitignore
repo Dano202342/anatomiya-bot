@@ -1,0 +1,10 @@
+# Maxfiy: bot tokeni — hech qachon GitHub'ga chiqmasin
+.env
+
+# Yuklab olingan media (server o'zi oladi) va vaqtinchalik fayllar
+media/
+data/download.log
+data/file_ids.json
+__pycache__/
+*.pyc
+.venv/

@@ -1,0 +1,1514 @@
+{
+ "nerv/neuron": {
+  "anim": null,
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Blausen_0657_MultipolarNeuron.png/960px-Blausen_0657_MultipolarNeuron.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Blausen_0657_MultipolarNeuron.png"
+  }
+ },
+ "nerv/myelin": {
+  "anim": null,
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Neuron.svg/960px-Neuron.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Neuron.svg"
+  }
+ },
+ "nerv/synapse": {
+  "anim": null,
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Synapse_figure.png/960px-Synapse_figure.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Synapse_figure.png"
+  }
+ },
+ "nerv/cerebrum": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/2/25/Cerebrum_-_frontal_lobe_-_animation.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Cerebrum - frontal lobe - animation.gif"
+  },
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Lobes_of_the_brain_NL.svg/960px-Lobes_of_the_brain_NL.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Lobes_of_the_brain_NL.svg"
+  }
+ },
+ "nerv/cerebellum": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Cerebellum.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Cerebellum.gif"
+  },
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Gehirn%2C_lateral_-_Lobi_%2B_Stammhirn_%2B_Cerebellum_eng.svg/960px-Gehirn%2C_lateral_-_Lobi_%2B_Stammhirn_%2B_Cerebellum_eng.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Gehirn,_lateral_-_Lobi_+_Stammhirn_+_Cerebellum_eng.svg"
+  }
+ },
+ "nerv/brainstem": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/0/08/Brainstem.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Brainstem.gif"
+  },
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/6/69/1311_Brain_Stem.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "1311_Brain_Stem.jpg"
+  }
+ },
+ "nerv/spinalcord": {
+  "anim": null,
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/1/14/Blausen_0822_SpinalCord.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Blausen_0822_SpinalCord.png"
+  }
+ },
+ "nerv/cn1": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/a/ac/Cribriform_plate_and_Olfactory_nerve_-_animation.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Cribriform plate and Olfactory nerve - animation.gif"
+  },
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Head_olfactory_nerve.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Head_olfactory_nerve.jpg"
+  }
+ },
+ "nerv/cn2": {
+  "anim": null,
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Gray773.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Gray773.png"
+  }
+ },
+ "nerv/cn3": {
+  "anim": null,
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Brain_human_normal_inferior_view_with_labels_en.svg/960px-Brain_human_normal_inferior_view_with_labels_en.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Brain_human_normal_inferior_view_with_labels_en.svg"
+  }
+ },
+ "nerv/cn4": {
+  "anim": null,
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Brain_human_normal_inferior_view_with_labels_en.svg/960px-Brain_human_normal_inferior_view_with_labels_en.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Brain_human_normal_inferior_view_with_labels_en.svg"
+  }
+ },
+ "nerv/cn5": {
+  "anim": null,
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Grant_1962_654.png/960px-Grant_1962_654.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Grant_1962_654.png"
+  }
+ },
+ "nerv/cn6": {
+  "anim": null,
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/2/29/Abducens_nerve1.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Abducens_nerve1.png"
+  }
+ },
+ "nerv/cn7": {
+  "anim": null,
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Cranial_nerve_VII.svg/960px-Cranial_nerve_VII.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Cranial_nerve_VII.svg"
+  }
+ },
+ "nerv/cn8": {
+  "anim": null,
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Brain_human_normal_inferior_view_with_labels_en.svg/960px-Brain_human_normal_inferior_view_with_labels_en.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Brain_human_normal_inferior_view_with_labels_en.svg"
+  }
+ },
+ "nerv/cn9": {
+  "anim": null,
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Gray791.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Gray791.png"
+  }
+ },
+ "nerv/cn10": {
+  "anim": null,
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Gray791.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Gray791.png"
+  }
+ },
+ "nerv/cn11": {
+  "anim": null,
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Brain_human_normal_inferior_view_with_labels_en.svg/960px-Brain_human_normal_inferior_view_with_labels_en.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Brain_human_normal_inferior_view_with_labels_en.svg"
+  }
+ },
+ "nerv/cn12": {
+  "anim": null,
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Gray794.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Gray794.png"
+  }
+ },
+ "nerv/cervplex": {
+  "anim": null,
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/2/20/Gray784.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Gray784.png"
+  }
+ },
+ "nerv/phrenic": {
+  "anim": null,
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Gray806.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Gray806.png"
+  }
+ },
+ "nerv/brachplex": {
+  "anim": null,
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Gray808.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Gray808.png"
+  }
+ },
+ "nerv/intercost": {
+  "anim": null,
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Gray819.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Gray819.png"
+  }
+ },
+ "nerv/lumbplex": {
+  "anim": null,
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Lumbar_plexus.svg/960px-Lumbar_plexus.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Lumbar_plexus.svg"
+  }
+ },
+ "nerv/sacrplex": {
+  "anim": null,
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Gray828.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Gray828.png"
+  }
+ },
+ "nerv/axillary": {
+  "anim": null,
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Brachial_plexus_2.svg/960px-Brachial_plexus_2.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Brachial_plexus_2.svg"
+  }
+ },
+ "nerv/musculocut": {
+  "anim": null,
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Nerves_of_the_left_upper_extremity.gif?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Nerves_of_the_left_upper_extremity.gif"
+  }
+ },
+ "nerv/radial": {
+  "anim": null,
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Gray818.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Gray818.png"
+  }
+ },
+ "nerv/median": {
+  "anim": null,
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Nerves_of_the_left_upper_extremity.gif?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Nerves_of_the_left_upper_extremity.gif"
+  }
+ },
+ "nerv/ulnar": {
+  "anim": null,
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Brachial_plexus_2.svg/960px-Brachial_plexus_2.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Brachial_plexus_2.svg"
+  }
+ },
+ "nerv/femoral": {
+  "anim": null,
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Gray823.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Gray823.png"
+  }
+ },
+ "nerv/obturator": {
+  "anim": null,
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Gray344.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Gray344.png"
+  }
+ },
+ "nerv/sciatic": {
+  "anim": null,
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/d/da/Sciatic_nerve2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Sciatic_nerve2.jpg"
+  }
+ },
+ "nerv/tibial": {
+  "anim": null,
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Gray828.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Gray828.png"
+  }
+ },
+ "nerv/fibular": {
+  "anim": null,
+  "photo": null
+ },
+ "nerv/gluteal": {
+  "anim": null,
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Gray828.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Gray828.png"
+  }
+ },
+ "nerv/pudendal": {
+  "anim": null,
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Gray542.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Gray542.png"
+  }
+ },
+ "nerv/sympathetic": {
+  "anim": null,
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Gray847.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Gray847.png"
+  }
+ },
+ "nerv/parasympathetic": {
+  "anim": null,
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Blausen_0703_Parasympathetic_Innervation.png/960px-Blausen_0703_Parasympathetic_Innervation.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Blausen_0703_Parasympathetic_Innervation.png"
+  }
+ },
+ "musk/frontalis": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Frontalis_muscle_animation.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Frontalis muscle animation.gif"
+  },
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Gray378.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Gray378.png"
+  }
+ },
+ "musk/orboculi": {
+  "anim": null,
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Gray379.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Gray379.png"
+  }
+ },
+ "musk/ororis": {
+  "anim": null,
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Orbicularis_oris.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Orbicularis_oris.jpg"
+  }
+ },
+ "musk/zygomatic": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/f/f2/Zygomaticus_major_muscle_animation.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Zygomaticus major muscle animation.gif"
+  },
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Sobo_1909_260_-_Zygomaticus_major_muscle.png/960px-Sobo_1909_260_-_Zygomaticus_major_muscle.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Sobo_1909_260_-_Zygomaticus_major_muscle.png"
+  }
+ },
+ "musk/buccinator": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/8/85/Buccinator_muscle_animation.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Buccinator muscle animation.gif"
+  },
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/d/df/Buccinator.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Buccinator.jpg"
+  }
+ },
+ "musk/masseter": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/6/62/Masseter_muscle_animation.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Masseter muscle animation.gif"
+  },
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Gray378_%28masseter_highlight%29.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Gray378_(masseter_highlight).png"
+  }
+ },
+ "musk/temporalis": {
+  "anim": null,
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Gray382.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Gray382.png"
+  }
+ },
+ "musk/pterygoid": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Medial_pterygoid_muscle_animation.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Medial pterygoid muscle animation.gif"
+  },
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Musculuspterygoideuslateralis.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Musculuspterygoideuslateralis.png"
+  }
+ },
+ "musk/platysma": {
+  "anim": null,
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Sobo_1909_267.png/960px-Sobo_1909_267.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Sobo_1909_267.png"
+  }
+ },
+ "musk/scm": {
+  "anim": null,
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Sternocleidomastoideus.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Sternocleidomastoideus.png"
+  }
+ },
+ "musk/scalene": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Scalenus_anterior_-_animation01.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Scalenus anterior - animation01.gif"
+  },
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Scalenus.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Scalenus.png"
+  }
+ },
+ "musk/hyoid": {
+  "anim": null,
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/5/58/Suprahyoid_muscles.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Suprahyoid_muscles.png"
+  }
+ },
+ "musk/pecmaj": {
+  "anim": null,
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/d/de/Gray410.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Gray410.png"
+  }
+ },
+ "musk/pecmin": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Pectoralis_minor_muscle_animation.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Pectoralis minor muscle animation.gif"
+  },
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Pectoralis_minor.svg/960px-Pectoralis_minor.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Pectoralis_minor.svg"
+  }
+ },
+ "musk/serratus": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Serratus_anterior_muscle_animation.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Serratus anterior muscle animation.gif"
+  },
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/8/8d/SerratusMagnus.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "SerratusMagnus.jpg"
+  }
+ },
+ "musk/intercostm": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/e/ed/External_intercostal_muscles_animation.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "External intercostal muscles animation.gif"
+  },
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Intercostal-muscle.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Intercostal-muscle.jpg"
+  }
+ },
+ "musk/diaphragm": {
+  "anim": null,
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Respiratory_system.svg/960px-Respiratory_system.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Respiratory_system.svg"
+  }
+ },
+ "musk/rectusabd": {
+  "anim": null,
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/9/95/Rectus_abdominis.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Rectus_abdominis.png"
+  }
+ },
+ "musk/extobl": {
+  "anim": null,
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/3/32/Illu_trunk_muscles.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Illu_trunk_muscles.jpg"
+  }
+ },
+ "musk/intobl": {
+  "anim": null,
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Gray395.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Gray395.png"
+  }
+ },
+ "musk/transvabd": {
+  "anim": null,
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/3/32/Illu_trunk_muscles.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Illu_trunk_muscles.jpg"
+  }
+ },
+ "musk/trapezius": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/0/06/Trapezius_muscle_animation.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Trapezius muscle animation.gif"
+  },
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/6/60/Trapezius.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Trapezius.png"
+  }
+ },
+ "musk/latissimus": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Latissimus_dorsi_muscle_animation.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Latissimus dorsi muscle animation.gif"
+  },
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/8/87/Latissimus.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Latissimus.jpg"
+  }
+ },
+ "musk/rhomboid": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/6/62/Rhomboid_muscles_animation.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Rhomboid muscles animation.gif"
+  },
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Rhomboidei.PNG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Rhomboidei.PNG"
+  }
+ },
+ "musk/levscap": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Levator_scapulae_muscle_animation.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Levator scapulae muscle animation.gif"
+  },
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Levator_scapulae.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Levator_scapulae.png"
+  }
+ },
+ "musk/erector": {
+  "anim": null,
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Gray389_-_Erector_spinae.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Gray389_-_Erector_spinae.png"
+  }
+ },
+ "musk/deltoid": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Deltoid_muscle_animation.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Deltoid muscle animation.gif"
+  },
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/9/93/Deltoideus.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Deltoideus.png"
+  }
+ },
+ "musk/rotcuff": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/8/85/Supraspinatus_muscle_animation.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Supraspinatus muscle animation.gif"
+  },
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/Shoulder_joint_bf.svg/960px-Shoulder_joint_bf.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Shoulder_joint_bf.svg"
+  }
+ },
+ "musk/biceps": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Biceps_brachii_muscle_-_animation01.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Biceps brachii muscle - animation01.gif"
+  },
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/1120_Muscles_that_Move_the_Forearm_Humerus_Flex_Sin.png/960px-1120_Muscles_that_Move_the_Forearm_Humerus_Flex_Sin.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "1120_Muscles_that_Move_the_Forearm_Humerus_Flex_Sin.png"
+  }
+ },
+ "musk/brachialis": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/6/64/Brachialis_muscle_-_animation01.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Brachialis muscle - animation01.gif"
+  },
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/2/2e/MusclesAnt%C3%A9rieuresDuBras.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "MusclesAntérieuresDuBras.jpg"
+  }
+ },
+ "musk/coracobr": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Coracobrachialis_muscle_-_animation01.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Coracobrachialis muscle - animation01.gif"
+  },
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Coracobrachialis_muscle05.png/960px-Coracobrachialis_muscle05.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Coracobrachialis_muscle05.png"
+  }
+ },
+ "musk/triceps": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Triceps_brachii_muscle_-_animation01.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Triceps brachii muscle - animation01.gif"
+  },
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/8/83/Triceps_brachii.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Triceps_brachii.png"
+  }
+ },
+ "musk/brachiorad": {
+  "anim": null,
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Gray417_color.PNG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Gray417_color.PNG"
+  }
+ },
+ "musk/flexors": {
+  "anim": null,
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/5/53/Gray421.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Gray421.png"
+  }
+ },
+ "musk/extensors": {
+  "anim": null,
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Carpal-Tunnel.svg/960px-Carpal-Tunnel.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Carpal-Tunnel.svg"
+  }
+ },
+ "musk/handm": {
+  "anim": null,
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/0/02/Gray423.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Gray423.png"
+  }
+ },
+ "musk/glutmax": {
+  "anim": null,
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Gluteus_maximus_3D.gif?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Gluteus_maximus_3D.gif"
+  }
+ },
+ "musk/glutmed": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Gluteus_medius_muscle_-_animation01.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Gluteus medius muscle - animation01.gif"
+  },
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Gluteus_medius_muscle08.png/960px-Gluteus_medius_muscle08.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Gluteus_medius_muscle08.png"
+  }
+ },
+ "musk/iliopsoas": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Psoas_major_muscle_-_animation01.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Psoas major muscle - animation01.gif"
+  },
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Gray430-en.svg/960px-Gray430-en.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Gray430-en.svg"
+  }
+ },
+ "musk/quadriceps": {
+  "anim": null,
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Quadriceps_3D.gif?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Quadriceps_3D.gif"
+  }
+ },
+ "musk/sartorius": {
+  "anim": null,
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/a/af/Sartorius.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Sartorius.png"
+  }
+ },
+ "musk/hamstrings": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Biceps_femoris_muscle_-_animation_1.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Biceps femoris muscle - animation 1.gif"
+  },
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/2/27/Hamstrings.gif?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Hamstrings.gif"
+  }
+ },
+ "musk/adductors": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/5/55/Adductor_brevis.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Adductor brevis.gif"
+  },
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Anterior_Hip_Muscles_2.PNG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Anterior_Hip_Muscles_2.PNG"
+  }
+ },
+ "musk/gastroc": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/f/f2/Gastrocnemius_muscle_-_animation.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Gastrocnemius muscle - animation.gif"
+  },
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Gastrocnemius_muscle_by_Sanjoy_Sanyal_2018-06-02.webm/960px--Gastrocnemius_muscle_by_Sanjoy_Sanyal_2018-06-02.webm.jpg",
+   "title": "Gastrocnemius_muscle_by_Sanjoy_Sanyal_2018-06-02.webm"
+  }
+ },
+ "musk/soleus": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Soleus_muscle_-_animation.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Soleus muscle - animation.gif"
+  },
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/a/a1/SoleusAndArch.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "SoleusAndArch.jpg"
+  }
+ },
+ "musk/achilles": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/d/d8/Triceps_surae_-_animation.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Triceps surae - animation.gif"
+  },
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/d/d4/1123_Muscles_of_the_Leg_that_Move_the_Foot_and_Toes_b.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "1123_Muscles_of_the_Leg_that_Move_the_Foot_and_Toes_b.png"
+  }
+ },
+ "musk/tibant": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Tibialis_anterior_muscle_-_animation.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Tibialis anterior muscle - animation.gif"
+  },
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Tibialis.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Tibialis.png"
+  }
+ },
+ "musk/fibularis": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Inferior_view_fibularis_longus_muscle_-_animation.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Inferior view fibularis longus muscle - animation.gif"
+  },
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Inferior_view_fibularis_longus_muscle_-_animation.gif?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Inferior_view_fibularis_longus_muscle_-_animation.gif"
+  }
+ },
+ "musk/footm": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/6/68/Extensor_digitorum_brevis_muscle_-_animation.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Extensor digitorum brevis muscle - animation.gif"
+  },
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/e/ee/FootMuscles.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "FootMuscles.png"
+  }
+ },
+ "teri/skinfunc": {
+  "anim": null,
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/1/13/Human_skin_structure.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Human_skin_structure.jpg"
+  }
+ },
+ "teri/epidermis": {
+  "anim": null,
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Epidermis-delimited.JPG/960px-Epidermis-delimited.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Epidermis-delimited.JPG"
+  }
+ },
+ "teri/dermis": {
+  "anim": null,
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Skin.png/960px-Skin.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Skin.png"
+  }
+ },
+ "teri/hypodermis": {
+  "anim": null,
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Skin.png/960px-Skin.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Skin.png"
+  }
+ },
+ "teri/receptors": {
+  "anim": null,
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Skin.png/960px-Skin.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Skin.png"
+  }
+ },
+ "teri/glands": {
+  "anim": null,
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Human_skin_structure.svg/960px-Human_skin_structure.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Human_skin_structure.svg"
+  }
+ },
+ "teri/melanin": {
+  "anim": null,
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Illu_skin02.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Illu_skin02.jpg"
+  }
+ },
+ "teri/hairstruct": {
+  "anim": null,
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/2/25/Gray945.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Gray945.png"
+  }
+ },
+ "teri/follicle": {
+  "anim": null,
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Hair_follicle-en.svg/960px-Hair_follicle-en.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Hair_follicle-en.svg"
+  }
+ },
+ "teri/hairgrowth": {
+  "anim": null,
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Hair_follicle-en.svg/960px-Hair_follicle-en.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Hair_follicle-en.svg"
+  }
+ },
+ "teri/haircolor": {
+  "anim": null,
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Hair_colors.jpg/960px-Hair_colors.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Hair_colors.jpg"
+  }
+ },
+ "teri/hairtypes": {
+  "anim": null,
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Huid.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Huid.jpg"
+  }
+ },
+ "teri/brows": {
+  "anim": null,
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Human_eyelashes.jpg/960px-Human_eyelashes.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Human_eyelashes.jpg"
+  }
+ },
+ "teri/arrector": {
+  "anim": null,
+  "photo": null
+ },
+ "teri/nails": {
+  "anim": null,
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Nail_svg_hariadhi.svg/960px-Nail_svg_hariadhi.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Nail_svg_hariadhi.svg"
+  }
+ },
+ "suyak/bonestruct": {
+  "anim": null,
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/2/23/603_Anatomy_of_Long_Bone.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "603_Anatomy_of_Long_Bone.jpg"
+  }
+ },
+ "suyak/bonetypes": {
+  "anim": null,
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/2/23/603_Anatomy_of_Long_Bone.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "603_Anatomy_of_Long_Bone.jpg"
+  }
+ },
+ "suyak/jointtypes": {
+  "anim": null,
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/907_Synovial_Joints.jpg/960px-907_Synovial_Joints.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "907_Synovial_Joints.jpg"
+  }
+ },
+ "suyak/frontal": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/f/f2/Rotation_frontal_bone.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Rotation frontal bone.gif"
+  },
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Frontal_bone_lateral3.png/960px-Frontal_bone_lateral3.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Frontal_bone_lateral3.png"
+  }
+ },
+ "suyak/parietal": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Parietal_bone_animation.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Parietal bone animation.gif"
+  },
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Parietal_bone_posterior2.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Parietal_bone_posterior2.png"
+  }
+ },
+ "suyak/temporal": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/3/39/Rotation_temporal_bone.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Rotation temporal bone.gif"
+  },
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Temporal_bone_lateral5.png/960px-Temporal_bone_lateral5.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Temporal_bone_lateral5.png"
+  }
+ },
+ "suyak/occipital": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/1/12/Rotation_Occipital_bone.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Rotation Occipital bone.gif"
+  },
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/1/19/Occipital_bone_lateral2.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Occipital_bone_lateral2.png"
+  }
+ },
+ "suyak/sphenoid": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Rotation_sphenoid_bone.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Rotation sphenoid bone.gif"
+  },
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/a/af/Sphenoid_bone_-_lateral_view.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Sphenoid_bone_-_lateral_view.png"
+  }
+ },
+ "suyak/ethmoid": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Rotation_ethmoid.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Rotation ethmoid.gif"
+  },
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Orbital_bones.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Orbital_bones.png"
+  }
+ },
+ "suyak/maxilla": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Rotation_Maxilla.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Rotation Maxilla.gif"
+  },
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Maxilla_anterior.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Maxilla_anterior.png"
+  }
+ },
+ "suyak/mandible": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/4/46/Mandible_animation.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Mandible animation.gif"
+  },
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/7/77/Mandible_bone_-_animation_02.gif?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Mandible_bone_-_animation_02.gif"
+  }
+ },
+ "suyak/zygomatic_b": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Rotation_zygomatic_bone.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Rotation zygomatic bone.gif"
+  },
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Zygomatic_bone_anterior.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Zygomatic_bone_anterior.png"
+  }
+ },
+ "suyak/nasal": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/3/33/Rotation_nasal_bone.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Rotation nasal bone.gif"
+  },
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/7/77/Illu_facial_bones.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Illu_facial_bones.jpg"
+  }
+ },
+ "suyak/lacrimal": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Rotation_lacrimal_bone.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Rotation lacrimal bone.gif"
+  },
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Lacrimal_bone_-_lateral_view6.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Lacrimal_bone_-_lateral_view6.png"
+  }
+ },
+ "suyak/palatine": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/4/44/Rotation_palatine_bone.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Rotation palatine bone.gif"
+  },
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/3/38/Palatine_bone_-_animation_02.gif?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Palatine_bone_-_animation_02.gif"
+  }
+ },
+ "suyak/concha": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/5/55/Inferior_nasal_concha_-_animation_01.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Inferior nasal concha - animation 01.gif"
+  },
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/6/62/Gray192.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Gray192.png"
+  }
+ },
+ "suyak/vomer": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/1/14/Rotation_Vomer_bone.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Rotation Vomer bone.gif"
+  },
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/7/77/Illu_facial_bones.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Illu_facial_bones.jpg"
+  }
+ },
+ "suyak/ossicles": {
+  "anim": null,
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Temporal_bone_-_The_Hungry_Artist_Multimedia.jpg/960px-Temporal_bone_-_The_Hungry_Artist_Multimedia.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Temporal_bone_-_The_Hungry_Artist_Multimedia.jpg"
+  }
+ },
+ "suyak/hyoidb": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/d/d8/Hyoid_bone_-_animation.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Hyoid bone - animation.gif"
+  },
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/8/83/712_Hyoid_Bone.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "712_Hyoid_Bone.jpg"
+  }
+ },
+ "suyak/vertebra": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Thoracic_vertebrae_animation.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Thoracic vertebrae animation.gif"
+  },
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Vertebra_Superior_View-en.svg/960px-Vertebra_Superior_View-en.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Vertebra_Superior_View-en.svg"
+  }
+ },
+ "suyak/cervical": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/8/83/Cervical_vertebrae_animation.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Cervical vertebrae animation.gif"
+  },
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Cervical_vertebrae_lateral2.png/960px-Cervical_vertebrae_lateral2.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Cervical_vertebrae_lateral2.png"
+  }
+ },
+ "suyak/thoracic": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Thoracic_vertebrae_animation.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Thoracic vertebrae animation.gif"
+  },
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Thoracic_vertebrae_back5.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Thoracic_vertebrae_back5.png"
+  }
+ },
+ "suyak/lumbar": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/3/36/Lumbar_vertebrae_animation.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Lumbar vertebrae animation.gif"
+  },
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Lumbar_vertebrae_anterior.png/960px-Lumbar_vertebrae_anterior.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Lumbar_vertebrae_anterior.png"
+  }
+ },
+ "suyak/sacrum": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/3/35/Sacrum_-_animation00.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Sacrum - animation00.gif"
+  },
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Sacrum_-_anterior_view04.png/960px-Sacrum_-_anterior_view04.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Sacrum_-_anterior_view04.png"
+  }
+ },
+ "suyak/sternum": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Sternum_animation.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Sternum animation.gif"
+  },
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Sternum_composition.png/960px-Sternum_composition.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Sternum_composition.png"
+  }
+ },
+ "suyak/ribs": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Ribs_animation.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Ribs animation.gif"
+  },
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Rib_cage.gif?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Rib_cage.gif"
+  }
+ },
+ "suyak/clavicle": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Clavicle.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Clavicle.gif"
+  },
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/Clavicle_-_anterior_view.png/960px-Clavicle_-_anterior_view.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Clavicle_-_anterior_view.png"
+  }
+ },
+ "suyak/scapula": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/9/99/Scapula_-_animation.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Scapula - animation.gif"
+  },
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Pectoral_girdle_front_diagram.svg/960px-Pectoral_girdle_front_diagram.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Pectoral_girdle_front_diagram.svg"
+  }
+ },
+ "suyak/humerus": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Humerus.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Humerus.gif"
+  },
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Humerus_-_anterior_view.png/960px-Humerus_-_anterior_view.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Humerus_-_anterior_view.png"
+  }
+ },
+ "suyak/radius": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Radius_-_animation.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Radius - animation.gif"
+  },
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Radius_-_anterior_view2.png/960px-Radius_-_anterior_view2.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Radius_-_anterior_view2.png"
+  }
+ },
+ "suyak/ulna": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/7/74/Ulna_-_animation.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Ulna - animation.gif"
+  },
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/Ulna_-_anterior_view.png/960px-Ulna_-_anterior_view.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Ulna_-_anterior_view.png"
+  }
+ },
+ "suyak/elbow": {
+  "anim": null,
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Elbow_on_gray_background.jpg/960px-Elbow_on_gray_background.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Elbow_on_gray_background.jpg"
+  }
+ },
+ "suyak/shoulder": {
+  "anim": null,
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Blausen_0797_ShoulderJoint.png/960px-Blausen_0797_ShoulderJoint.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Blausen_0797_ShoulderJoint.png"
+  }
+ },
+ "suyak/carpals": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Carpus_-_animation01.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Carpus - animation01.gif"
+  },
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/3D_Medical_Animation_Human_Wrist.jpg/960px-3D_Medical_Animation_Human_Wrist.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "3D_Medical_Animation_Human_Wrist.jpg"
+  }
+ },
+ "suyak/metacarpals": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Metacarpal_bones_-_animation01.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Metacarpal bones - animation01.gif"
+  },
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Metacarpal_bones_%28left_hand%29_01_palmar_view_with_label.png/960px-Metacarpal_bones_%28left_hand%29_01_palmar_view_with_label.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Metacarpal_bones_(left_hand)_01_palmar_view_with_label.png"
+  }
+ },
+ "suyak/hipbone": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/9/90/Hip_bone_animation.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Hip bone animation.gif"
+  },
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Hip_bone_anterior_high-res.jpg/960px-Hip_bone_anterior_high-res.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Hip_bone_anterior_high-res.jpg"
+  }
+ },
+ "suyak/femur": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Femur_-_animation.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Femur - animation.gif"
+  },
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Femur_-_anterior_view2.png/960px-Femur_-_anterior_view2.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Femur_-_anterior_view2.png"
+  }
+ },
+ "suyak/patella": {
+  "anim": null,
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/Knee_diagram.svg/960px-Knee_diagram.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Knee_diagram.svg"
+  }
+ },
+ "suyak/tibia": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Tibia_-_animation.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Tibia - animation.gif"
+  },
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/Tibia_-_frontal_view.png/960px-Tibia_-_frontal_view.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Tibia_-_frontal_view.png"
+  }
+ },
+ "suyak/fibula": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/7/74/Fibula_-_animation.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Fibula - animation.gif"
+  },
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/Fibula_-_anterior_view.png/960px-Fibula_-_anterior_view.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Fibula_-_anterior_view.png"
+  }
+ },
+ "suyak/knee": {
+  "anim": null,
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/Human_knees.jpg/960px-Human_knees.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Human_knees.jpg"
+  }
+ },
+ "suyak/hipjoint": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/9/90/Hip_bone_animation.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Hip bone animation.gif"
+  },
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Hip.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Hip.jpg"
+  }
+ },
+ "suyak/tarsals": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Tarsal_bones_-_animation01.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Tarsal bones - animation01.gif"
+  },
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Tarsus2.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Tarsus2.png"
+  }
+ },
+ "suyak/metatarsals": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/7/77/Metatarsal_bones_-_animation01.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Metatarsal bones - animation01.gif"
+  },
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Metatarsal_bones01_-_superior_view.png/960px-Metatarsal_bones01_-_superior_view.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Metatarsal_bones01_-_superior_view.png"
+  }
+ },
+ "buyrak/kidney": {
+  "anim": null,
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Blausen_0592_KidneyAnatomy_01.png/960px-Blausen_0592_KidneyAnatomy_01.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Blausen_0592_KidneyAnatomy_01.png"
+  }
+ },
+ "buyrak/nephron": {
+  "anim": null,
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Kidney_Nephron.svg/960px-Kidney_Nephron.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Kidney_Nephron.svg"
+  }
+ },
+ "buyrak/ureter": {
+  "anim": null,
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Urinary_system.svg/960px-Urinary_system.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Urinary_system.svg"
+  }
+ },
+ "buyrak/bladder": {
+  "anim": null,
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Urinary_system.svg/960px-Urinary_system.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Urinary_system.svg"
+  }
+ },
+ "buyrak/urethra": {
+  "anim": null,
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Female_and_Male_Urethra.jpg/960px-Female_and_Male_Urethra.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Female_and_Male_Urethra.jpg"
+  }
+ },
+ "buyrak/ckd": {
+  "anim": null,
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Hemodialysismachine.jpg/960px-Hemodialysismachine.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Hemodialysismachine.jpg"
+  }
+ },
+ "buyrak/stones": {
+  "anim": null,
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/d/df/Nefrolit.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Nefrolit.jpg"
+  }
+ },
+ "buyrak/pyelo": {
+  "anim": null,
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Xanthogranulomatous_pyelonephritis_cd68.jpg/960px-Xanthogranulomatous_pyelonephritis_cd68.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Xanthogranulomatous_pyelonephritis_cd68.jpg"
+  }
+ },
+ "buyrak/glomerulo": {
+  "anim": null,
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Crescentic_glomerulonephritis_HE_stain.JPEG/960px-Crescentic_glomerulonephritis_HE_stain.JPEG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Crescentic_glomerulonephritis_HE_stain.JPEG"
+  }
+ },
+ "buyrak/cystitis": {
+  "anim": null,
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Pyuria.JPG/960px-Pyuria.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Pyuria.JPG"
+  }
+ },
+ "qon/heart": {
+  "anim": null,
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Heart_anterior_exterior_view.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Heart_anterior_exterior_view.png"
+  }
+ },
+ "qon/valves": {
+  "anim": null,
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/1/12/CG_Heart.gif?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "CG_Heart.gif"
+  }
+ },
+ "qon/conduction": {
+  "anim": null,
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Cardiac_Conduction_System.jpg/960px-Cardiac_Conduction_System.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Cardiac_Conduction_System.jpg"
+  }
+ },
+ "qon/coronary": {
+  "anim": null,
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Coronary_arteries.svg/960px-Coronary_arteries.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Coronary_arteries.svg"
+  }
+ },
+ "qon/aorta": {
+  "anim": null,
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Aorta_segments.svg/960px-Aorta_segments.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Aorta_segments.svg"
+  }
+ },
+ "qon/veins": {
+  "anim": null,
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Vein_%28retouched%29.svg/960px-Vein_%28retouched%29.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Vein_(retouched).svg"
+  }
+ },
+ "qon/capillary": {
+  "anim": null,
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Capillary.svg/960px-Capillary.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Capillary.svg"
+  }
+ },
+ "qon/blood": {
+  "anim": null,
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/2/20/Illu_blood_cell_lineage.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Illu_blood_cell_lineage.jpg"
+  }
+ },
+ "qon/hypertension": {
+  "anim": null,
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Grade_1_hypertension.jpg/960px-Grade_1_hypertension.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Grade_1_hypertension.jpg"
+  }
+ },
+ "qon/athero": {
+  "anim": null,
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Blausen_0257_CoronaryArtery_Plaque.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Blausen_0257_CoronaryArtery_Plaque.png"
+  }
+ },
+ "qon/infarct": {
+  "anim": null,
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/f/fb/Blausen_0463_HeartAttack.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Blausen_0463_HeartAttack.png"
+  }
+ },
+ "qon/stroke": {
+  "anim": null,
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/MCA_Territory_Infarct.svg/960px-MCA_Territory_Infarct.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "MCA_Territory_Infarct.svg"
+  }
+ },
+ "qon/anemia": {
+  "anim": null,
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Iron_deficiency_anemia_blood_film.jpg/960px-Iron_deficiency_anemia_blood_film.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Iron_deficiency_anemia_blood_film.jpg"
+  }
+ },
+ "qon/heartfail": {
+  "anim": null,
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Elevated_JVP.JPG/960px-Elevated_JVP.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Elevated_JVP.JPG"
+  }
+ },
+ "bez/hypothal": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/0/05/Hypothalamus.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Hypothalamus.gif"
+  },
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Hypothalamus.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Hypothalamus.jpg"
+  }
+ },
+ "bez/pituitary": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Pituitary_gland.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Pituitary gland.gif"
+  },
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Hypophyse.png/960px-Hypophyse.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Hypophyse.png"
+  }
+ },
+ "bez/pineal": {
+  "anim": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Pineal_gland.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "title": "Pineal gland.gif"
+  },
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Pineal_gland.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Pineal_gland.png"
+  }
+ },
+ "bez/thyroid": {
+  "anim": null,
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Anterior_thyroid.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Anterior_thyroid.jpg"
+  }
+ },
+ "bez/parathyroid": {
+  "anim": null,
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Illu_thyroid_parathyroid.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Illu_thyroid_parathyroid.jpg"
+  }
+ },
+ "bez/adrenal": {
+  "anim": null,
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Adrenal_Gland_detail_-_English.png/960px-Adrenal_Gland_detail_-_English.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Adrenal_Gland_detail_-_English.png"
+  }
+ },
+ "bez/pancreas": {
+  "anim": null,
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/Blausen_0699_PancreasAnatomy2.png/960px-Blausen_0699_PancreasAnatomy2.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Blausen_0699_PancreasAnatomy2.png"
+  }
+ },
+ "bez/gonads": {
+  "anim": null,
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/Basic_Female_Reproductive_System_%28English%29.svg/960px-Basic_Female_Reproductive_System_%28English%29.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Basic_Female_Reproductive_System_(English).svg"
+  }
+ },
+ "bez/thymus": {
+  "anim": null,
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Illu_thymus.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Illu_thymus.jpg"
+  }
+ },
+ "bez/diabetes": {
+  "anim": null,
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Blausen_0701_PancreaticTissue.png/960px-Blausen_0701_PancreaticTissue.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Blausen_0701_PancreaticTissue.png"
+  }
+ },
+ "bez/goiter": {
+  "anim": null,
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Thyroid%2C_Diffuse_Hyperplasia.jpg/960px-Thyroid%2C_Diffuse_Hyperplasia.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Thyroid,_Diffuse_Hyperplasia.jpg"
+  }
+ },
+ "bez/graves": {
+  "anim": null,
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Proptosis_and_lid_retraction_from_Graves%27_Disease.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Proptosis_and_lid_retraction_from_Graves'_Disease.jpg"
+  }
+ },
+ "bez/hypothyroid": {
+  "anim": null,
+  "photo": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Anterior_thyroid.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "title": "Anterior_thyroid.jpg"
+  }
+ },
+ "bez/growthdis": {
+  "anim": null,
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Acromegalyteethgapping.jpg/960px-Acromegalyteethgapping.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "Acromegalyteethgapping.jpg"
+  }
+ },
+ "bez/cushing": {
+  "anim": null,
+  "photo": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/CushingsFace.jpg/960px-CushingsFace.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+   "title": "CushingsFace.jpg"
+  }
+ }
+}
