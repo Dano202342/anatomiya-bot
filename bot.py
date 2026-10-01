@@ -20,6 +20,7 @@ from dotenv import load_dotenv
 load_dotenv(Path(__file__).parent / ".env")
 
 import media  # noqa: E402
+import quiz  # noqa: E402
 import webserver  # noqa: E402
 from content import SECTIONS, all_items, get_category, get_item  # noqa: E402
 
@@ -33,6 +34,7 @@ except (FileNotFoundError, json.JSONDecodeError):
     file_ids = {}
 
 dp = Dispatcher()
+dp.include_router(quiz.router)
 http: aiohttp.ClientSession | None = None
 
 # Foydalanuvchi qayerda turgani — "⬅️ Orqaga" tugmasi uchun
@@ -40,6 +42,7 @@ nav: dict[int, tuple] = {}
 
 MENU_BUTTONS = {s["title"]: k for k, s in SECTIONS.items()}
 ATLAS_BTN = "🧊 3D atlas"
+QUIZ_BTN = "🎯 Viktorina"
 SEARCH_BTN = "🔎 Qidirish"
 HELP_BTN = "ℹ️ Yordam"
 BACK_BTN = "⬅️ Orqaga"
@@ -49,8 +52,9 @@ HOME_BTN = "🏠 Bosh menyu"
 # ───────────────────────── Klaviaturalar ─────────────────────────
 
 def main_menu() -> ReplyKeyboardMarkup:
-    t = [KeyboardButton(text=x) for x in MENU_BUTTONS] + [KeyboardButton(text=ATLAS_BTN)]
+    t = [KeyboardButton(text=x) for x in MENU_BUTTONS]
     rows = [t[i:i + 2] for i in range(0, len(t), 2)]
+    rows.append([KeyboardButton(text=QUIZ_BTN), KeyboardButton(text=ATLAS_BTN)])
     rows.append([KeyboardButton(text=BACK_BTN), KeyboardButton(text=SEARCH_BTN), KeyboardButton(text=HELP_BTN)])
     return ReplyKeyboardMarkup(keyboard=rows, resize_keyboard=True,
                                input_field_placeholder="Bo'limni tanlang yoki nom yozing...")
@@ -183,6 +187,7 @@ Men — <b>Anatomiya boti</b> 🧬. Odam tanasini <b>3D modellar, animatsiyalar 
 🩺 Har bir bo'limda: <b>qayer buzilsa — qanday kasallik kelib chiqadi</b>
 
 🧊 <b>3D atlas</b> — 3D modellarni bot ichida barmoq bilan aylantirib ko'ring!
+🎯 <b>Viktorina</b> — 10 ta savol bilan bilimingizni sinang!
 
 Pastdagi tugmalardan birini bosing 👇 yoki a'zo nomini yozing.
 """
@@ -201,8 +206,10 @@ HELP = """
 ⬅️ <b>Orqaga</b> — bir qadam orqaga
 🏠 <b>Bosh menyu</b> — boshiga qaytish
 🔎 <b>Qidirish</b> — nomni o'zbekcha, lotincha yoki inglizcha yozing
+🎯 <b>Viktorina</b> — 10 ta savol, oxirida ball va baho
 
 /start — bosh menyu
+/quiz — viktorina
 /help — yordam
 """
 
@@ -239,6 +246,12 @@ async def cmd_help(msg: Message):
 async def ask_search(msg: Message):
     await msg.answer("🔎 Qidirmoqchi bo'lgan a'zo yoki kasallik nomini yozing.\n"
                      "Masalan: <i>yelka</i>, <i>femur</i>, <i>buyrak</i>, <i>diabet</i>, <i>insult</i>")
+
+
+@dp.message(F.text == QUIZ_BTN)
+@dp.message(Command("quiz"))
+async def open_quiz(msg: Message):
+    await quiz.send_menu(msg)
 
 
 @dp.message(F.text == ATLAS_BTN)
