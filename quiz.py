@@ -13,6 +13,7 @@ from aiogram.exceptions import TelegramBadRequest
 from aiogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup, Message
 
 import media
+import stats
 from content import SECTIONS, all_items
 
 log = logging.getLogger("quiz")
@@ -142,6 +143,7 @@ async def cb_start(cq: CallbackQuery):
     if flt != "all" and flt not in SECTIONS:
         return await cq.answer("Topilmadi", show_alert=True)
     await cq.answer("🎯 Boshladik!")
+    await stats.quiz_started()
     await ask(cq.message, flt, 0, 0)
 
 

@@ -21,6 +21,7 @@ load_dotenv(Path(__file__).parent / ".env")
 
 import media  # noqa: E402
 import quiz  # noqa: E402
+import stats  # noqa: E402
 import webserver  # noqa: E402
 from content import SECTIONS, all_items, get_category, get_item  # noqa: E402
 
@@ -35,6 +36,14 @@ except (FileNotFoundError, json.JSONDecodeError):
 
 dp = Dispatcher()
 dp.include_router(quiz.router)
+
+
+@dp.update.outer_middleware()
+async def _track_users(handler, event, data):
+    user = data.get("event_from_user")
+    if user and not user.is_bot:
+        await stats.track(user.id)
+    return await handler(event, data)
 http: aiohttp.ClientSession | None = None
 
 # Foydalanuvchi qayerda turgani — "⬅️ Orqaga" tugmasi uchun
@@ -43,6 +52,7 @@ nav: dict[int, tuple] = {}
 MENU_BUTTONS = {s["title"]: k for k, s in SECTIONS.items()}
 ATLAS_BTN = "🧊 3D atlas"
 QUIZ_BTN = "🎯 Viktorina"
+CHANNEL_BTN = "📢 Kanalimiz"
 SEARCH_BTN = "🔎 Qidirish"
 HELP_BTN = "ℹ️ Yordam"
 BACK_BTN = "⬅️ Orqaga"
@@ -54,7 +64,10 @@ HOME_BTN = "🏠 Bosh menyu"
 def main_menu() -> ReplyKeyboardMarkup:
     t = [KeyboardButton(text=x) for x in MENU_BUTTONS]
     rows = [t[i:i + 2] for i in range(0, len(t), 2)]
-    rows.append([KeyboardButton(text=QUIZ_BTN), KeyboardButton(text=ATLAS_BTN)])
+    extra = [KeyboardButton(text=QUIZ_BTN), KeyboardButton(text=ATLAS_BTN)]
+    if os.getenv("CHANNEL_URL"):  # Vercel'da CHANNEL_URL=https://t.me/kanal_nomi
+        extra.append(KeyboardButton(text=CHANNEL_BTN))
+    rows.append(extra)
     rows.append([KeyboardButton(text=BACK_BTN), KeyboardButton(text=SEARCH_BTN), KeyboardButton(text=HELP_BTN)])
     return ReplyKeyboardMarkup(keyboard=rows, resize_keyboard=True,
                                input_field_placeholder="Bo'limni tanlang yoki nom yozing...")
@@ -246,6 +259,29 @@ async def cmd_help(msg: Message):
 async def ask_search(msg: Message):
     await msg.answer("🔎 Qidirmoqchi bo'lgan a'zo yoki kasallik nomini yozing.\n"
                      "Masalan: <i>yelka</i>, <i>femur</i>, <i>buyrak</i>, <i>diabet</i>, <i>insult</i>")
+
+
+@dp.message(F.text == CHANNEL_BTN)
+async def open_channel(msg: Message):
+    url = os.getenv("CHANNEL_URL")
+    if not url:
+        return await msg.answer("Kanal hali ochilmagan.", reply_markup=main_menu())
+    kb = InlineKeyboardMarkup(inline_keyboard=[[InlineKeyboardButton(text="📢 Kanalga o'tish", url=url)]])
+    await msg.answer("📢 Yangiliklar, qiziqarli anatomiya faktlari va yangi bo'limlar — kanalimizda!\n"
+                     "Obuna bo'ling 👇", reply_markup=kb)
+
+
+@dp.message(Command("stats"))
+async def cmd_stats(msg: Message):
+    admins = stats.admin_ids()
+    if not admins:  # admin hali belgilanmagan — egasiga o'z ID sini ko'rsatamiz
+        return await msg.answer(
+            f"🆔 Sizning Telegram ID: <code>{msg.from_user.id}</code>\n\n"
+            "Statistikani faqat siz ko'rishingiz uchun Vercel → Environment Variables ga\n"
+            f"<code>ADMIN_IDS={msg.from_user.id}</code>\nqo'shing va Redeploy qiling.")
+    if msg.from_user.id not in admins:
+        return await msg.answer("⛔️ Bu buyruq faqat bot egasi uchun.")
+    await msg.answer(await stats.report())
 
 
 @dp.message(F.text == QUIZ_BTN)
