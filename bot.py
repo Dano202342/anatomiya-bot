@@ -273,6 +273,12 @@ def is_admin(uid: int) -> bool:
     return uid in stats.admin_ids()
 
 
+def not_admin_text(uid: int) -> str:
+    return (f"⛔️ Bu buyruq faqat bot egasi uchun.\n\n🆔 Sizning Telegram ID: <code>{uid}</code>\n"
+            f"Agar bot egasi siz bo'lsangiz, Vercel'dagi <code>ADMIN_IDS</code> qiymati aynan shu raqam "
+            f"ekanini tekshiring va Redeploy qiling.")
+
+
 async def deep_link(msg: Message, payload: str) -> str:
     me = await msg.bot.me()
     return f"https://t.me/{me.username}?start={payload}"
@@ -282,7 +288,7 @@ async def deep_link(msg: Message, payload: str) -> str:
 async def cmd_link(msg: Message, command: CommandObject):
     """Admin: kanal postlari uchun deep link havolalari. /link yoki /link femur"""
     if not is_admin(msg.from_user.id):
-        return await msg.answer("⛔️ Bu buyruq faqat bot egasi uchun.")
+        return await msg.answer(not_admin_text(msg.from_user.id))
     q = (command.args or "").lower().strip()
     if not q:
         lines = [f"🎯 Viktorina menyusi:\n<code>{await deep_link(msg, 'quiz')}</code>",
@@ -312,7 +318,7 @@ async def cmd_post(msg: Message, command: CommandObject):
     """Admin: postga javob (reply) qilib yozing:  /post <payload> <tugma matni>
     Masalan:  /post quiz-all 🎯 Viktorinani boshlash"""
     if not is_admin(msg.from_user.id):
-        return await msg.answer("⛔️ Bu buyruq faqat bot egasi uchun.")
+        return await msg.answer(not_admin_text(msg.from_user.id))
     usage = ("📝 <b>Kanalga tugmali post joylash</b>\n\n"
              "1. Postni (matn yoki rasm+matn) botga yuboring\n"
              "2. O'sha xabarga <b>javob (Reply)</b> qilib yozing:\n"
@@ -366,7 +372,7 @@ async def cmd_stats(msg: Message):
             "Statistikani faqat siz ko'rishingiz uchun Vercel → Environment Variables ga\n"
             f"<code>ADMIN_IDS={msg.from_user.id}</code>\nqo'shing va Redeploy qiling.")
     if msg.from_user.id not in admins:
-        return await msg.answer("⛔️ Bu buyruq faqat bot egasi uchun.")
+        return await msg.answer(not_admin_text(msg.from_user.id))
     await msg.answer(await stats.report())
 
 
@@ -446,6 +452,12 @@ async def _edit_or_send(cq: CallbackQuery, text: str, kb: InlineKeyboardMarkup):
 @dp.message(F.text)
 async def search(msg: Message):
     q = msg.text.lower().strip()
+    if len(q) > 40 or "\n" in q:  # bu qidiruv emas — ehtimol kanal uchun post matni
+        if is_admin(msg.from_user.id):
+            return await msg.answer("📝 Bu postni kanalga joylash uchun shu xabarga <b>Reply</b> qilib yozing:\n"
+                                    "<code>/post quiz-all 🎯 Viktorinani boshlash</code>")
+        return await msg.answer("🔎 Qidirish uchun a'zo nomini qisqa yozing, masalan: <i>son suyagi</i>",
+                                reply_markup=main_menu())
     if len(q) < 3:
         return await msg.answer("Kamida 3 ta harf yozing 🙂", reply_markup=main_menu())
     hits = [(s, c, i) for s, c, i in all_items()
