@@ -13,6 +13,7 @@ Kalitlar:
 
 import logging
 import os
+import re
 from datetime import datetime, timedelta, timezone
 
 import aiohttp
@@ -33,7 +34,8 @@ def enabled() -> bool:
 
 
 def admin_ids() -> set[int]:
-    return {int(x) for x in os.getenv("ADMIN_IDS", "").replace(" ", "").split(",") if x.isdigit()}
+    # Qiymatdagi barcha raqamlar olinadi — qo'shtirnoq, bo'sh joy, yangi qator, "ADMIN_IDS=" xalaqit bermaydi
+    return {int(x) for x in re.findall(r"\d{5,}", os.getenv("ADMIN_IDS", ""))}
 
 
 def _day(delta: int = 0) -> str:
