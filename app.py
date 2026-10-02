@@ -87,4 +87,6 @@ async def app(scope, receive, send):
         ctype, file = WEBAPP_FILES.get(name, WEBAPP_FILES[""])
         return await _respond(send, 200, file.read_bytes(), ctype, cache=True)
 
-    return await _respond(send, 200, "Anatomiya boti ishlayapti ✅".encode())
+    ver = (os.getenv("VERCEL_GIT_COMMIT_SHA") or "lokal")[:7]
+    admins = "bor" if os.getenv("ADMIN_IDS") else "yo'q"
+    return await _respond(send, 200, f"Anatomiya boti ishlayapti ✅\nVersiya: {ver}\nADMIN_IDS: {admins}".encode())

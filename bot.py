@@ -274,7 +274,13 @@ def is_admin(uid: int) -> bool:
 
 
 def not_admin_text(uid: int) -> str:
+    raw = os.getenv("ADMIN_IDS")
+    # Diagnostika: raqamlarni to'liq oshkor qilmasdan nima o'qilganini ko'rsatamiz
+    seen = ", ".join(f"{str(a)[:3]}…{str(a)[-2:]} ({len(str(a))} xona)" for a in stats.admin_ids()) or "raqam topilmadi"
+    diag = "o'zgaruvchi umuman yo'q ❌" if raw is None else f"{seen}"
+    ver = (os.getenv("VERCEL_GIT_COMMIT_SHA") or "lokal")[:7]
     return (f"⛔️ Bu buyruq faqat bot egasi uchun.\n\n🆔 Sizning Telegram ID: <code>{uid}</code>\n"
+            f"🔧 Bot o'qigan ADMIN_IDS: {diag}\n🔖 Versiya: {ver}\n\n"
             f"Agar bot egasi siz bo'lsangiz, Vercel'dagi <code>ADMIN_IDS</code> qiymati aynan shu raqam "
             f"ekanini tekshiring va Redeploy qiling.")
 
