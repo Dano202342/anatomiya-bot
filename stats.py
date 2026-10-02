@@ -33,9 +33,20 @@ def enabled() -> bool:
     return _cfg() is not None
 
 
+def env_like(*words: str) -> dict[str, str]:
+    """Nomida shu so'zlardan biri bor muhit o'zgaruvchilari (ADMIN_IDS, ADMINS_ID, ADMIN_ID ... hammasi)."""
+    out = {}
+    for k, v in os.environ.items():
+        name = re.sub(r"[^A-Z]", "", k.upper())
+        if any(w in name for w in words):
+            out[k] = v
+    return out
+
+
 def admin_ids() -> set[int]:
-    # Qiymatdagi barcha raqamlar olinadi — qo'shtirnoq, bo'sh joy, yangi qator, "ADMIN_IDS=" xalaqit bermaydi
-    return {int(x) for x in re.findall(r"\d{5,}", os.getenv("ADMIN_IDS", ""))}
+    # Nomida ADMIN bor istalgan o'zgaruvchidagi barcha raqamlar — nom va format xatolariga chidamli
+    raw = " ".join(env_like("ADMIN").values())
+    return {int(x) for x in re.findall(r"\d{5,}", raw)}
 
 
 def _day(delta: int = 0) -> str:

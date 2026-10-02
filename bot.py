@@ -4,6 +4,7 @@ import asyncio
 import json
 import logging
 import os
+import re
 import socket
 from pathlib import Path
 
@@ -65,7 +66,7 @@ def main_menu() -> ReplyKeyboardMarkup:
     t = [KeyboardButton(text=x) for x in MENU_BUTTONS]
     rows = [t[i:i + 2] for i in range(0, len(t), 2)]
     extra = [KeyboardButton(text=QUIZ_BTN), KeyboardButton(text=ATLAS_BTN)]
-    if os.getenv("CHANNEL_URL"):  # Vercel'da CHANNEL_URL=https://t.me/kanal_nomi
+    if channel_url():  # Vercel'da CHANNEL_URL=https://t.me/kanal_nomi
         extra.append(KeyboardButton(text=CHANNEL_BTN))
     rows.append(extra)
     rows.append([KeyboardButton(text=BACK_BTN), KeyboardButton(text=SEARCH_BTN), KeyboardButton(text=HELP_BTN)])
@@ -274,13 +275,13 @@ def is_admin(uid: int) -> bool:
 
 
 def not_admin_text(uid: int) -> str:
-    raw = os.getenv("ADMIN_IDS")
+    names = list(stats.env_like("ADMIN"))
     # Diagnostika: raqamlarni to'liq oshkor qilmasdan nima o'qilganini ko'rsatamiz
     seen = ", ".join(f"{str(a)[:3]}…{str(a)[-2:]} ({len(str(a))} xona)" for a in stats.admin_ids()) or "raqam topilmadi"
-    diag = "o'zgaruvchi umuman yo'q ❌" if raw is None else f"{seen}"
+    diag = "nomida ADMIN bor o'zgaruvchi yo'q ❌" if not names else f"{', '.join(names)} → {seen}"
     ver = (os.getenv("VERCEL_GIT_COMMIT_SHA") or "lokal")[:7]
     return (f"⛔️ Bu buyruq faqat bot egasi uchun.\n\n🆔 Sizning Telegram ID: <code>{uid}</code>\n"
-            f"🔧 Bot o'qigan ADMIN_IDS: {diag}\n🔖 Versiya: {ver}\n\n"
+            f"🔧 Bot ko'rgan admin sozlamasi: {diag}\n🔖 Versiya: {ver}\n\n"
             f"Agar bot egasi siz bo'lsangiz, Vercel'dagi <code>ADMIN_IDS</code> qiymati aynan shu raqam "
             f"ekanini tekshiring va Redeploy qiling.")
 
@@ -310,13 +311,24 @@ async def cmd_link(msg: Message, command: CommandObject):
     await msg.answer("🔗 <b>Mavzu havolalari</b>\n\n" + "\n\n".join(lines))
 
 
+def _channel_raw() -> str:
+    """Nomida CHANNEL yoki KANAL bor o'zgaruvchi (CHANNEL_URL, CHANNEL_ID, KANAL ...)."""
+    return next((v.strip().strip('"\'') for v in stats.env_like("CHANNEL", "KANAL").values() if v.strip()), "")
+
+
 def channel_chat() -> str | None:
-    """CHANNEL_ID (@kanal yoki -100...) yoki CHANNEL_URL dan olinadi."""
-    if os.getenv("CHANNEL_ID"):
-        return os.getenv("CHANNEL_ID")
-    url = os.getenv("CHANNEL_URL", "")
-    name = url.rstrip("/").rsplit("/", 1)[-1] if "t.me/" in url else ""
-    return f"@{name}" if name and not name.startswith("+") else None
+    """Kanalga post yuborish uchun: @nom yoki -100... ID."""
+    v = _channel_raw()
+    if re.fullmatch(r"-100\d+", v):
+        return v
+    name = v.rstrip("/").rsplit("/", 1)[-1].lstrip("@")
+    return f"@{name}" if re.fullmatch(r"[A-Za-z][A-Za-z0-9_]{3,}", name) else None
+
+
+def channel_url() -> str | None:
+    """Tugma uchun havola: https://t.me/nom"""
+    chat = channel_chat()
+    return f"https://t.me/{chat[1:]}" if chat and chat.startswith("@") else None
 
 
 @dp.message(Command("post"))
@@ -361,7 +373,7 @@ async def ask_search(msg: Message):
 
 @dp.message(F.text == CHANNEL_BTN)
 async def open_channel(msg: Message):
-    url = os.getenv("CHANNEL_URL")
+    url = channel_url()
     if not url:
         return await msg.answer("Kanal hali ochilmagan.", reply_markup=main_menu())
     kb = InlineKeyboardMarkup(inline_keyboard=[[InlineKeyboardButton(text="📢 Kanalga o'tish", url=url)]])

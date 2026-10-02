@@ -19,6 +19,7 @@ from aiogram.enums import ParseMode
 from aiogram.types import Update
 
 import bot as tgbot
+import stats
 import webserver
 
 WEBAPP_FILES = {
@@ -88,5 +89,9 @@ async def app(scope, receive, send):
         return await _respond(send, 200, file.read_bytes(), ctype, cache=True)
 
     ver = (os.getenv("VERCEL_GIT_COMMIT_SHA") or "lokal")[:7]
-    admins = "bor" if os.getenv("ADMIN_IDS") else "yo'q"
-    return await _respond(send, 200, f"Anatomiya boti ishlayapti ✅\nVersiya: {ver}\nADMIN_IDS: {admins}".encode())
+    # Faqat o'zgaruvchi NOMLARI (qiymatlar emas) — sozlamani tekshirish uchun
+    admins = ", ".join(stats.env_like("ADMIN")) or "yo'q"
+    channel = ", ".join(stats.env_like("CHANNEL", "KANAL")) or "yo'q"
+    body = (f"Anatomiya boti ishlayapti ✅\nVersiya: {ver}\nAdmin o'zgaruvchisi: {admins} "
+            f"({len(stats.admin_ids())} ta ID)\nKanal o'zgaruvchisi: {channel} → {tgbot.channel_chat() or 'topilmadi'}")
+    return await _respond(send, 200, body.encode())
