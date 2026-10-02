@@ -11,8 +11,8 @@ import aiohttp
 from aiogram import Bot, Dispatcher, F
 from aiogram.client.default import DefaultBotProperties
 from aiogram.enums import ChatAction, ParseMode
-from aiogram.exceptions import TelegramBadRequest
-from aiogram.filters import Command, CommandStart
+from aiogram.exceptions import TelegramBadRequest, TelegramForbiddenError
+from aiogram.filters import Command, CommandObject, CommandStart
 from aiogram.types import (BufferedInputFile, CallbackQuery, FSInputFile, InlineKeyboardButton,
                            InlineKeyboardMarkup, KeyboardButton, Message, ReplyKeyboardMarkup, WebAppInfo)
 from dotenv import load_dotenv
@@ -245,8 +245,94 @@ def category_text(sec: str, cat: str) -> str:
 
 
 @dp.message(CommandStart())
-async def cmd_start(msg: Message):
-    await send_home(msg, msg.from_user.id, msg.from_user.first_name)
+async def cmd_start(msg: Message, command: CommandObject):
+    """/start yoki kanal tugmasidan kelgan deep link: t.me/<bot>?start=<payload>
+
+    payload: quiz | quiz-<bo'lim|all> | atlas | s-<bo'lim> | i-<bo'lim>-<mavzu>
+    """
+    uid, arg = msg.from_user.id, (command.args or "").strip()
+    parts = arg.split("-", 2)
+    if parts[0] == "quiz":
+        if len(parts) > 1 and (parts[1] == "all" or parts[1] in SECTIONS):
+            await stats.quiz_started()
+            return await quiz.ask(msg, parts[1], 0, 0)
+        return await quiz.send_menu(msg)
+    if parts[0] == "atlas":
+        return await open_atlas(msg)
+    if parts[0] == "s" and len(parts) == 2 and parts[1] in SECTIONS:
+        await msg.answer("👋 Xush kelibsiz!", reply_markup=main_menu())
+        return await send_section(msg, uid, parts[1])
+    if parts[0] == "i" and len(parts) == 3 and (parts[1], parts[2]) in quiz.INDEX:
+        cat, it = quiz.INDEX[(parts[1], parts[2])]
+        await msg.answer("👋 Xush kelibsiz!", reply_markup=main_menu())
+        return await show_item(msg, uid, parts[1], cat, it)
+    await send_home(msg, uid, msg.from_user.first_name)
+
+
+def is_admin(uid: int) -> bool:
+    return uid in stats.admin_ids()
+
+
+async def deep_link(msg: Message, payload: str) -> str:
+    me = await msg.bot.me()
+    return f"https://t.me/{me.username}?start={payload}"
+
+
+@dp.message(Command("link"))
+async def cmd_link(msg: Message, command: CommandObject):
+    """Admin: kanal postlari uchun deep link havolalari. /link yoki /link femur"""
+    if not is_admin(msg.from_user.id):
+        return await msg.answer("⛔️ Bu buyruq faqat bot egasi uchun.")
+    q = (command.args or "").lower().strip()
+    if not q:
+        lines = [f"🎯 Viktorina menyusi:\n<code>{await deep_link(msg, 'quiz')}</code>",
+                 f"🎲 Darhol aralash viktorina:\n<code>{await deep_link(msg, 'quiz-all')}</code>",
+                 f"🧊 3D atlas:\n<code>{await deep_link(msg, 'atlas')}</code>"]
+        lines += [f"{s['title']}:\n<code>{await deep_link(msg, 's-' + k)}</code>" for k, s in SECTIONS.items()]
+        lines.append("\n💡 Aniq mavzu uchun: <code>/link son suyagi</code>")
+        return await msg.answer("🔗 <b>Deep link havolalari</b>\n\n" + "\n\n".join(lines))
+    hits = [(s, i) for s, c, i in all_items() if q in i["title"].lower() or q in i["lat"].lower() or q in i["en"].lower()]
+    if not hits:
+        return await msg.answer("Topilmadi.")
+    lines = [f"{i['title']}:\n<code>{await deep_link(msg, f'i-{s}-' + i['key'])}</code>" for s, i in hits[:10]]
+    await msg.answer("🔗 <b>Mavzu havolalari</b>\n\n" + "\n\n".join(lines))
+
+
+def channel_chat() -> str | None:
+    """CHANNEL_ID (@kanal yoki -100...) yoki CHANNEL_URL dan olinadi."""
+    if os.getenv("CHANNEL_ID"):
+        return os.getenv("CHANNEL_ID")
+    url = os.getenv("CHANNEL_URL", "")
+    name = url.rstrip("/").rsplit("/", 1)[-1] if "t.me/" in url else ""
+    return f"@{name}" if name and not name.startswith("+") else None
+
+
+@dp.message(Command("post"))
+async def cmd_post(msg: Message, command: CommandObject):
+    """Admin: postga javob (reply) qilib yozing:  /post <payload> <tugma matni>
+    Masalan:  /post quiz-all 🎯 Viktorinani boshlash"""
+    if not is_admin(msg.from_user.id):
+        return await msg.answer("⛔️ Bu buyruq faqat bot egasi uchun.")
+    usage = ("📝 <b>Kanalga tugmali post joylash</b>\n\n"
+             "1. Postni (matn yoki rasm+matn) botga yuboring\n"
+             "2. O'sha xabarga <b>javob (Reply)</b> qilib yozing:\n"
+             "<code>/post quiz-all 🎯 Viktorinani boshlash</code>\n\n"
+             "Payloadlar: <code>quiz</code>, <code>quiz-all</code>, <code>quiz-suyak</code>, <code>atlas</code>, "
+             "<code>s-suyak</code>, <code>i-suyak-femur</code> (/link buyrug'i bilan oling)\n\n"
+             "⚠️ Bot kanalda <b>admin</b> bo'lishi va post joylash huquqiga ega bo'lishi kerak.")
+    args = (command.args or "").split(maxsplit=1)
+    if not msg.reply_to_message or len(args) < 2:
+        return await msg.answer(usage)
+    chat = channel_chat()
+    if not chat:
+        return await msg.answer("❌ Kanal sozlanmagan: Vercel'ga <code>CHANNEL_URL</code> (yoki <code>CHANNEL_ID</code>) qo'shing.")
+    payload, label = args
+    kb = InlineKeyboardMarkup(inline_keyboard=[[InlineKeyboardButton(text=label, url=await deep_link(msg, payload))]])
+    try:
+        await msg.bot.copy_message(chat, msg.chat.id, msg.reply_to_message.message_id, reply_markup=kb)
+    except (TelegramBadRequest, TelegramForbiddenError) as e:
+        return await msg.answer(f"❌ Kanalga joylab bo'lmadi: {e.message}\n\nBot kanalda admin ekanini tekshiring.")
+    await msg.answer(f"✅ Post {chat} kanaliga joylandi!")
 
 
 @dp.message(Command("help"))
