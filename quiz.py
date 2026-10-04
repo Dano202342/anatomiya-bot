@@ -15,6 +15,7 @@ from aiogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMar
 import media
 import stats
 from content import SECTIONS, all_items
+from content.questions import BY_ID, QUESTIONS
 
 log = logging.getLogger("quiz")
 router = Router()
@@ -80,8 +81,31 @@ def _short(title: str) -> str:
     return title if len(title) <= 40 else title[:38] + "…"
 
 
+LETTERS = "ABCD"
+
+
+def fact_pool(flt: str) -> list[dict]:
+    return [q for q in QUESTIONS if flt == "all" or q["sec"] == flt]
+
+
+async def ask_fact(msg: Message, flt: str, n: int, score: int, fq: dict):
+    """Bilim savoli: variantlar matnda to'liq, tugmalarda harf + qisqa matn."""
+    order = list(range(len(fq["opts"])))
+    random.shuffle(order)  # callback'da asl indeks yuradi — 0 doim to'g'ri
+    head = f"🎯 <b>Savol {n + 1}/{TOTAL}</b>   ⭐️ Ball: {score}\n\n"
+    body = "\n".join(f"<b>{LETTERS[i]})</b> {fq['opts'][o]}" for i, o in enumerate(order))
+    kb = InlineKeyboardMarkup(inline_keyboard=[
+        [InlineKeyboardButton(text=f"{LETTERS[i]}) {_short(fq['opts'][o])}",
+                              callback_data=f"f|{flt}|{n}|{score}|{fq['id']}|{o}")]
+        for i, o in enumerate(order)])
+    await msg.answer(f"{head}❓ <b>{fq['q']}</b>\n\n{body}", reply_markup=kb)
+
+
 async def ask(msg: Message, flt: str, n: int, score: int):
     """n — shu paytgacha javob berilgan savollar soni."""
+    facts = fact_pool(flt)
+    if facts and random.random() < 0.5:  # yarmi bilim savollari, yarmi nom/rasm savollari
+        return await ask_fact(msg, flt, n, score, random.choice(facts))
     sec, cat, it = random.choice(_pool(flt))
     m = media._cache.get(f"{sec}/{it['key']}") or {}
     has_media = bool(m.get("anim") or m.get("photo"))
@@ -168,9 +192,30 @@ async def cb_answer(cq: CallbackQuery):
 
     verdict = ("✅ <b>To'g'ri!</b>" if ok else
                f"❌ <b>Noto'g'ri.</b>\nTo'g'ri javob: <b>{it['title']}</b>")
-    text = (f"🎯 <b>Savol {n}/{TOTAL}</b>   ⭐️ Ball: {score}\n\n{verdict}\n"
-            f"🏷 <i>{it['lat']}</i>")
-    rows = [[InlineKeyboardButton(text="📖 Batafsil o'qish", callback_data=f"i|{sec}|{cat}|{it['key']}")]]
+    await _result(cq, flt, n, score, f"{verdict}\n🏷 <i>{it['lat']}</i>", f"i|{sec}|{cat}|{it['key']}")
+
+
+@router.callback_query(F.data.startswith("f|"))
+async def cb_fact_answer(cq: CallbackQuery):
+    _, flt, n, score, qid, chosen = cq.data.split("|")
+    n, score = int(n) + 1, int(score)
+    fq = BY_ID.get(qid)
+    if not fq:
+        return await cq.answer("Savol eskirgan, yangisini boshlang", show_alert=True)
+    ok = chosen == "0"
+    score += ok
+    await cq.answer("✅ To'g'ri!" if ok else "❌ Noto'g'ri")
+    verdict = ("✅ <b>To'g'ri!</b>" if ok else
+               f"❌ <b>Noto'g'ri.</b>\nTo'g'ri javob: <b>{fq['opts'][0]}</b>")
+    found = INDEX.get((fq["sec"], fq["ref"])) if fq["ref"] else None
+    detail = f"i|{fq['sec']}|{found[0]}|{fq['ref']}" if found else None
+    await _result(cq, flt, n, score, f"❓ {fq['q']}\n\n{verdict}\n\n💡 {fq['explain']}", detail)
+
+
+async def _result(cq: CallbackQuery, flt: str, n: int, score: int, body: str, detail_cb: str | None):
+    """Javob natijasi + keyingi savol / yakuniy ball."""
+    text = f"🎯 <b>Savol {n}/{TOTAL}</b>   ⭐️ Ball: {score}\n\n{body}"
+    rows = [[InlineKeyboardButton(text="📖 Batafsil o'qish", callback_data=detail_cb)]] if detail_cb else []
     if n < TOTAL:
         rows.insert(0, [InlineKeyboardButton(text="Keyingi savol ➡️", callback_data=f"qn|{flt}|{n}|{score}")])
     kb = InlineKeyboardMarkup(inline_keyboard=rows)

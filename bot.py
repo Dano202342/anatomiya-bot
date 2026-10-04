@@ -4,6 +4,7 @@ import asyncio
 import json
 import logging
 import os
+import random
 import re
 import socket
 from pathlib import Path
@@ -25,6 +26,7 @@ import quiz  # noqa: E402
 import stats  # noqa: E402
 import webserver  # noqa: E402
 from content import SECTIONS, all_items, get_category, get_item  # noqa: E402
+from content.questions import BY_ID, QUESTIONS  # noqa: E402
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s: %(message)s")
 log = logging.getLogger("anatomiya")
@@ -329,6 +331,57 @@ def channel_url() -> str | None:
     """Tugma uchun havola: https://t.me/nom"""
     chat = channel_chat()
     return f"https://t.me/{chat[1:]}" if chat and chat.startswith("@") else None
+
+
+@dp.message(Command("savol"))
+async def cmd_savol(msg: Message, command: CommandObject):
+    """Admin: kanalga Telegram viktorina-so'rovnomasi joylash.
+    /savol — tasodifiy | /savol suyak — bo'limdan | /savol s5 — aniq savol | ... test — avval o'zingizga ko'rsatish"""
+    if not is_admin(msg.from_user.id):
+        return await msg.answer(not_admin_text(msg.from_user.id))
+    words = (command.args or "").lower().split()
+    test = "test" in words
+    words = [w for w in words if w != "test"]
+    pool = QUESTIONS
+    if words and words[0] in BY_ID:
+        pool = [BY_ID[words[0]]]
+    elif words and words[0] in SECTIONS:
+        pool = [q for q in QUESTIONS if q["sec"] == words[0]]
+    elif words:
+        return await msg.answer("❓ Topilmadi. Masalan: <code>/savol</code>, <code>/savol suyak</code>, "
+                                "<code>/savol s5</code>, <code>/savol qon test</code>\n"
+                                f"Bo'limlar: {', '.join(SECTIONS)}\nSavollar ro'yxati: /savollar")
+    fq = random.choice(pool)
+    chat = msg.chat.id if test else channel_chat()
+    if not chat:
+        return await msg.answer("❌ Kanal sozlanmagan: Vercel'ga <code>CHANNEL_URL</code> qo'shing.")
+    order = list(range(len(fq["opts"])))
+    random.shuffle(order)
+    kb = InlineKeyboardMarkup(inline_keyboard=[[InlineKeyboardButton(
+        text="🎯 Yana savollar — botda", url=await deep_link(msg, f"quiz-{fq['sec']}"))]])
+    try:
+        await msg.bot.send_poll(
+            chat, question=f"{SECTIONS[fq['sec']]['title'][:2]} {fq['q']}",
+            options=[fq["opts"][o] for o in order], type="quiz", correct_option_id=order.index(0),
+            explanation=fq["explain"][:200], is_anonymous=True, reply_markup=kb)
+    except (TelegramBadRequest, TelegramForbiddenError) as e:
+        return await msg.answer(f"❌ Joylab bo'lmadi: {e.message}\n\nBot kanalda admin ekanini tekshiring.")
+    if not test:
+        await msg.answer(f"✅ Savol <code>{fq['id']}</code> {chat} kanaliga joylandi!\n"
+                         f"Yana bittasi uchun: /savol yoki /savol {fq['sec']}")
+
+
+@dp.message(Command("savollar"))
+async def cmd_savollar(msg: Message):
+    """Admin: barcha savollar ro'yxati (ID bilan)."""
+    if not is_admin(msg.from_user.id):
+        return await msg.answer(not_admin_text(msg.from_user.id))
+    for sec, s in SECTIONS.items():
+        qs = [q for q in QUESTIONS if q["sec"] == sec]
+        if qs:
+            lines = "\n".join(f"<code>{q['id']}</code> — {q['q']}" for q in qs)
+            await msg.answer(f"<b>{s['title']}</b> ({len(qs)} ta)\n\n{lines}\n\n"
+                             f"Joylash: <code>/savol {qs[0]['id']}</code> yoki <code>/savol {sec}</code>")
 
 
 @dp.message(Command("post"))
